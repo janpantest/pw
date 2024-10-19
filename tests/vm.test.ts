@@ -15,6 +15,8 @@ test('Vam', async ({ page }) => {
     // await vmHome.checkLink(0);
     await page.waitForTimeout(4000);
     await vmMestoUrad.checkAllLinks(1);
-    await page.waitForTimeout(4000);
     await vmVedeni.getContact();
+    await vmVedeni.enterString('whatever');
+    await vmVedeni.checkResult('Žádná stránka nenalezena.');
+    await page.waitForTimeout(4000);
 });
