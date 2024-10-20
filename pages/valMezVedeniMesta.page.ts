@@ -1,5 +1,6 @@
 import { expect, Locator, Page } from '@playwright/test';
 import { clickIfElementExist } from '../helpers/helpers';
+import fs from 'fs';
 
 export class ValmezHomePagealMezVedeniMestaPage {
     readonly page: Page;
@@ -20,8 +21,11 @@ export class ValmezHomePagealMezVedeniMestaPage {
         await expect(this.title).toBeVisible({ timeout: 10000 });
     }
 
-    async getContact(): Promise<void> {
+    async getContact(time: string): Promise<void> {
         console.info(await this.contact.allTextContents());
+        const contacts = await this.contact.allTextContents();
+        const constactRun =  JSON.stringify(contacts);
+        fs.writeFileSync(`${time}_kontakty.txt`, constactRun);
     }
 
     async enterString(string: string): Promise<void> {
