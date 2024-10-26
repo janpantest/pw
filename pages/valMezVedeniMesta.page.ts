@@ -24,8 +24,8 @@ export class ValmezHomePagealMezVedeniMestaPage {
     async getContact(time: string): Promise<void> {
         console.info(await this.contact.allTextContents());
         const contacts = await this.contact.allTextContents();
-        const constactRun =  JSON.stringify(contacts);
-        fs.writeFileSync(`${time}_kontakty.txt`, constactRun);
+        const contactsRun =  JSON.stringify(contacts);
+        fs.writeFileSync(`output/${time}_kontakty.txt`, contactsRun)
     }
 
     async enterString(string: string): Promise<void> {

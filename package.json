@@ -6,6 +6,8 @@
   "scripts": {
     "runBrowser":"npx playwright test --project=chromium --headed",
     "singleRun": "npx playwright test --project=chromium --headed  --workers=1",
+    "val": "npx playwright test --project=chromium --headed  --workers=1 --grep @vm",
+    "goo": "npx playwright test --project=chromium --headed  --workers=1 --grep @goo",
     "runReport": "npx playwright show-report"
   },
   "keywords": [],
