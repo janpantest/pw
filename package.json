@@ -8,6 +8,7 @@
     "singleRun": "npx playwright test --project=chromium --headed  --workers=1",
     "val": "npx playwright test --project=chromium --headed  --workers=1 --grep @vm",
     "goo": "npx playwright test --project=chromium --headed  --workers=1 --grep @goo",
+    "lit": "npx playwright test --project=chromium --headed  --workers=1 --grep @lit",
     "runReport": "npx playwright show-report"
   },
   "keywords": [],
