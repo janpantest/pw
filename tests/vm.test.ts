@@ -37,13 +37,15 @@ test('Google', { tag: '@goo' }, async ({ page }) => {
 
 test('iLiteratura', { tag: '@literatura' }, async ({ page }) => {
     const literatura = new ILiteraturaPage(page);
-    // const bookName = 'Nevinnosti';
-    const bookName = 'Totožnost';
+    // const bookName = 'Ivalu'; // Nevinnosti
+    const bookName = 'Toyen';
+    // const bookName = 'Totožnost';
     // const bookName = 'Mikádo';
 
     await literatura.goToGoBooks('https://www.iliteratura.cz/knihy');
     // await literatura.clickIfExist();
-    await literatura.searchForString(bookName);
+    // await literatura.searchForString(bookName);
+    await literatura.waitForString(bookName)
     await literatura.clickSpecificBook(bookName);
     await literatura.getDetail(bookName, updatedTime);
 });
